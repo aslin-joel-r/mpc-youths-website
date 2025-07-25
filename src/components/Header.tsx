@@ -7,6 +7,7 @@ import logo from '@/assets/logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -29,15 +30,15 @@ const Header = () => {
   };
 
   return (
-    <header className="hero-gradient shadow-lg sticky top-0 z-50">
+    <header className={`shadow-lg sticky top-0 z-50 ${isHomePage ? 'absolute w-full bg-transparent' : 'glassmorphism'}`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <img src={logo} alt="MPC Youth Fellowship" className="w-12 h-12 rounded-full" />
             <div>
-              <h1 className="text-xl font-bold text-primary-foreground">MPC Youth Fellowship</h1>
-              <p className="text-xs text-primary-foreground/80">Meippanin Pathai Church</p>
+              <h1 className="text-xl font-bold text-white">MPC Youth Fellowship</h1>
+              <p className="text-xs text-white/80">Meippanin Pathai Church</p>
             </div>
           </Link>
 
@@ -48,8 +49,8 @@ const Header = () => {
                 key={link.name}
                 to={link.path}
                 onClick={link.path === '#footer' ? scrollToFooter : undefined}
-                className={`text-primary-foreground hover:text-secondary transition-colors font-medium ${
-                  isActive(link.path) ? 'text-secondary border-b-2 border-secondary' : ''
+                className={`text-white hover:text-red-500 transition-colors font-bold ${
+                  isActive(link.path) ? 'text-red-500 border-b-2 border-red-500' : ''
                 }`}
               >
                 {link.name}
@@ -61,7 +62,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-primary-foreground hover:bg-primary-foreground/10"
+            className="md:hidden text-white hover:bg-white/10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +71,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-primary-foreground/20">
+          <nav className="md:hidden mt-4 pb-4 border-t border-white/20">
             <div className="flex flex-col space-y-3 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -80,8 +81,8 @@ const Header = () => {
                     setIsMenuOpen(false);
                     if (link.path === '#footer') scrollToFooter();
                   }}
-                  className={`text-primary-foreground hover:text-secondary transition-colors font-medium py-2 ${
-                    isActive(link.path) ? 'text-secondary' : ''
+                  className={`text-white hover:text-red-500 transition-colors font-bold py-2 ${
+                    isActive(link.path) ? 'text-red-500' : ''
                   }`}
                 >
                   {link.name}

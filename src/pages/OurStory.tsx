@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Play } from 'lucide-react';
 import fellowshipImage from '@/assets/fellowship-image.jpg';
-import heroImage from '@/assets/hero-image.jpg';
+import bibleStudyImage from '@/assets/bible-study-image.jpg';
+import communityServiceImage from '@/assets/community-service-image.jpg';
 
 const OurStory = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -82,9 +84,9 @@ const OurStory = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 fade-in-left">
               <img
-                src={heroImage}
+                src={bibleStudyImage}
                 alt="Journey of Faith"
-                className="rounded-lg shadow-xl w-full h-auto"
+                className="rounded-lg shadow-xl w-full h-auto hover:shadow-2xl transition-shadow"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -126,26 +128,15 @@ const OurStory = () => {
               </p>
             </div>
             <div className="fade-in-right">
-              <div className="bg-gradient-to-br from-secondary to-accent p-8 rounded-lg text-white">
-                <h3 className="text-2xl font-bold mb-4">Our Weekly Gatherings</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                    Prayer and Worship
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                    Bible Study
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                    Fellowship Time
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
-                    Community Service
-                  </li>
-                </ul>
+              <div className="relative bg-gray-900 rounded-lg overflow-hidden shadow-xl group cursor-pointer hover:shadow-2xl transition-all">
+                <div className="aspect-video bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <Play className="w-16 h-16 mx-auto mb-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <h3 className="text-xl font-bold mb-2">Growing in Faith</h3>
+                    <p className="text-sm opacity-80">Video: Our Weekly Gatherings</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               </div>
             </div>
           </div>
@@ -160,13 +151,15 @@ const OurStory = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 fade-in-left">
-              <div className="bg-primary text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-lg leading-relaxed">
-                  To spread God's love and light in our institutions, homes, and communities 
-                  through service, outreach, and bold faith. This is more than a fellowship — 
-                  it's a mission to impact the world for Jesus.
-                </p>
+              <div className="relative bg-gray-900 rounded-lg overflow-hidden shadow-xl group cursor-pointer hover:shadow-2xl transition-all">
+                <div className="aspect-video bg-gradient-to-br from-accent to-primary flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <Play className="w-16 h-16 mx-auto mb-4 opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <h3 className="text-xl font-bold mb-2">Living with Purpose</h3>
+                    <p className="text-sm opacity-80">Video: Our Mission in Action</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               </div>
             </div>
             <div className="order-1 lg:order-2">

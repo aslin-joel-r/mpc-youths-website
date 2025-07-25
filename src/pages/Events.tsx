@@ -97,25 +97,25 @@ const Events = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-4">
-                    <div className="flex items-center space-x-2 text-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span className="font-medium">{event.date}</span>
+                    <div className="flex items-center space-x-2 text-primary">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-primary">{event.date}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-foreground">
-                      <Clock className="w-4 h-4" />
-                      <span className="font-medium">{event.time}</span>
+                    <div className="flex items-center space-x-2 text-primary">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-primary">{event.time}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-foreground">
-                      <Users className="w-4 h-4" />
-                      <span className="font-medium">{event.location}</span>
+                    <div className="flex items-center space-x-2 text-primary">
+                      <Users className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-primary">{event.location}</span>
                     </div>
                   </div>
-                  <p className="text-foreground/80 leading-relaxed mb-4 font-medium">
+                  <p className="text-primary/80 leading-relaxed mb-4 font-semibold">
                     {event.description}
                   </p>
                   <Button 
                     variant="outline" 
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold"
+                    className="w-full border-primary text-primary hover:bg-red-500 hover:text-white hover:border-red-500 font-semibold transition-all"
                   >
                     More Info
                   </Button>
@@ -137,10 +137,10 @@ const Events = () => {
             Come as you are and be part of our community!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="default" className="px-8">
+            <Button size="lg" variant="default" className="px-8 hover:bg-red-500 transition-colors">
               Contact Us
             </Button>
-            <Button size="lg" variant="outline" className="px-8">
+            <Button size="lg" variant="outline" className="px-8 hover:bg-red-500 hover:text-white hover:border-red-500 transition-all">
               Learn More
             </Button>
           </div>
