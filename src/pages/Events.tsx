@@ -63,7 +63,7 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
@@ -97,25 +97,25 @@ const Events = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-4">
-                    <div className="flex items-center space-x-2 text-muted-foreground">
+                    <div className="flex items-center space-x-2 text-foreground">
                       <Calendar className="w-4 h-4" />
-                      <span>{event.date}</span>
+                      <span className="font-medium">{event.date}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
+                    <div className="flex items-center space-x-2 text-foreground">
                       <Clock className="w-4 h-4" />
-                      <span>{event.time}</span>
+                      <span className="font-medium">{event.time}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
+                    <div className="flex items-center space-x-2 text-foreground">
                       <Users className="w-4 h-4" />
-                      <span>{event.location}</span>
+                      <span className="font-medium">{event.location}</span>
                     </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-foreground/80 leading-relaxed mb-4 font-medium">
                     {event.description}
                   </p>
                   <Button 
                     variant="outline" 
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold"
                   >
                     More Info
                   </Button>

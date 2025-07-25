@@ -12,6 +12,7 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Our Story', path: '/our-story' },
     { name: 'Events', path: '/events' },
+    { name: 'Pray for Me', path: '/pray-for-me' },
     { name: 'Contact', path: '#footer' },
   ];
 
@@ -28,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary shadow-lg sticky top-0 z-50">
+    <header className="hero-gradient shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}

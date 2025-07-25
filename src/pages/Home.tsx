@@ -18,11 +18,11 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="section-fade-in animate">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight text-white drop-shadow-lg">
               Welcome to 
-              <span className="block text-secondary">MPC Youth Fellowship</span>
+              <span className="block text-yellow-300 font-extrabold">MPC Youth Fellowship</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl mb-8 text-white font-semibold max-w-2xl mx-auto leading-relaxed drop-shadow-md">
               Where Love for God Leads to a Life of Purpose
             </p>
             
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
 
             <Link to="/pray-for-me">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4 card-hover group">
+              <Button size="lg" variant="glow" className="text-lg px-8 py-4 card-hover group">
                 <Heart className="w-5 h-5 mr-2" />
                 Pray for Me
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -61,7 +61,7 @@ const PrayForMe = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-20 bg-gradient-to-br from-secondary/10 to-accent/10 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-secondary/10 to-accent/10 flex items-center justify-center">
         <div className="container mx-auto px-4">
           <Card className="max-w-md mx-auto text-center shadow-xl">
             <CardContent className="p-8">
@@ -89,7 +89,7 @@ const PrayForMe = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Header with Verse */}
       <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
