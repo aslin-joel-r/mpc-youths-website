@@ -8,33 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* MPC Youth Fellowship Color Palette */
+    --mpc-white: 0 0% 100%;
+    --mpc-dark-blue: 219 100% 12%;
+    --mpc-light-blue: 210 100% 51%;
+    --mpc-red: 344 71% 46%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Design System Colors */
+    --background: var(--mpc-white);
+    --foreground: var(--mpc-dark-blue);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--mpc-white);
+    --card-foreground: var(--mpc-dark-blue);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: var(--mpc-white);
+    --popover-foreground: var(--mpc-dark-blue);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--mpc-dark-blue);
+    --primary-foreground: var(--mpc-white);
+
+    --secondary: var(--mpc-light-blue);
+    --secondary-foreground: var(--mpc-white);
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--mpc-red);
+    --accent-foreground: var(--mpc-white);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--mpc-red);
+    --destructive-foreground: var(--mpc-white);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 90%;
+    --input: 210 20% 95%;
+    --ring: var(--mpc-light-blue);
 
     --radius: 0.5rem;
 
@@ -100,6 +107,56 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom gradients and animations */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)));
+  }
+
+  .verse-gradient {
+    background: linear-gradient(45deg, hsl(var(--mpc-light-blue) / 0.1), hsl(var(--mpc-red) / 0.1));
+  }
+
+  .section-fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .section-fade-in.animate {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .fade-in-left {
+    @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-left.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .fade-in-right {
+    @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-right.animate {
+    @apply opacity-100 translate-x-0;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--mpc-light-blue) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(var(--mpc-light-blue) / 0.6);
+    }
   }
 }
