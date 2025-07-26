@@ -90,41 +90,41 @@ const Events = () => {
             {events.map((event, index) => (
               <Card 
                 key={event.id} 
-                className={`card-hover ${getCardColor(event.type)} border-l-4 section-fade-in bg-card`}
+                className={`card-hover ${getCardColor(event.type)} border-l-4 section-fade-in bg-white shadow-lg`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-2 text-primary">
-                      {event.icon}
+                    <div className="flex items-center space-x-2">
+                      <div className="text-primary">{event.icon}</div>
                       <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getTypeColor(event.type)}`}>
                         {event.type}
                       </span>
                     </div>
                   </div>
-                  <CardTitle className="text-xl text-primary">{event.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900 font-bold">{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 mb-4">
-                    <div className="flex items-center space-x-2 text-primary">
+                    <div className="flex items-center space-x-2">
                       <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-primary">{event.date}</span>
+                      <span className="font-bold text-gray-700">{event.date}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-primary">
+                    <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-primary">{event.time}</span>
+                      <span className="font-bold text-gray-700">{event.time}</span>
                     </div>
-                    <div className="flex items-center space-x-2 text-primary">
+                    <div className="flex items-center space-x-2">
                       <Users className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-primary">{event.location}</span>
+                      <span className="font-bold text-gray-700">{event.location}</span>
                     </div>
                   </div>
-                  <p className="text-foreground/80 leading-relaxed mb-4 font-medium">
+                  <p className="text-gray-600 leading-relaxed mb-4 font-medium">
                     {event.description}
                   </p>
                   <Button 
                     variant="outline" 
-                    className="w-full border-primary text-primary hover:bg-red-500 hover:text-white hover:border-red-500 font-semibold transition-all"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all"
                   >
                     More Info
                   </Button>
