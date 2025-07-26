@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
+import heroImage from '@/assets/hero-image.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,12 @@ const Header = () => {
   };
 
   return (
-    <header className={`shadow-lg sticky top-0 z-50 ${isHomePage ? 'absolute w-full bg-transparent' : 'glassmorphism'}`}>
+    <header className={`shadow-lg sticky top-0 z-50 ${isHomePage ? 'absolute w-full' : 'glassmorphism'}`} style={isHomePage ? {
+      backgroundImage: `url(${heroImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      position: 'relative'
+    } : {}}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}

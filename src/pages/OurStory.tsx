@@ -3,6 +3,8 @@ import { Play } from 'lucide-react';
 import fellowshipImage from '@/assets/fellowship-image.jpg';
 import bibleStudyImage from '@/assets/bible-study-image.jpg';
 import communityServiceImage from '@/assets/community-service-image.jpg';
+import whoWeAreImage from '@/assets/who_we_are.jpg';
+import livingWithPurposeImage from '@/assets/living_with_purpose.jpg';
 
 const OurStory = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -16,6 +18,24 @@ const OurStory = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('animate');
+              
+              // Enhanced scroll animations
+              const leftElements = entry.target.querySelectorAll('.section-animate-left');
+              const rightElements = entry.target.querySelectorAll('.section-animate-right');
+              
+              leftElements.forEach((el, idx) => {
+                setTimeout(() => {
+                  el.classList.remove('translate-x-[-100px]', 'opacity-0');
+                  el.classList.add('translate-x-0', 'opacity-100');
+                }, idx * 200);
+              });
+              
+              rightElements.forEach((el, idx) => {
+                setTimeout(() => {
+                  el.classList.remove('translate-x-[100px]', 'opacity-0');
+                  el.classList.add('translate-x-0', 'opacity-100');
+                }, idx * 200);
+              });
             }
           });
         },
@@ -50,7 +70,7 @@ const OurStory = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="transform transition-all duration-1000 translate-x-[-100px] opacity-0 section-animate-left">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                 Who We Are
               </h2>
@@ -64,10 +84,10 @@ const OurStory = () => {
                 life's challenges and celebrating God's goodness in our lives.
               </p>
             </div>
-            <div className="fade-in-right">
+            <div className="transform transition-all duration-1000 translate-x-[100px] opacity-0 section-animate-right hover:scale-105">
               <img
-                src={fellowshipImage}
-                alt="MPC Youth Fellowship"
+                src={whoWeAreImage}
+                alt="MPC Youth Fellowship - Who We Are"
                 className="rounded-lg shadow-xl w-full h-auto"
               />
             </div>
@@ -82,14 +102,21 @@ const OurStory = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 fade-in-left">
-              <img
-                src={bibleStudyImage}
-                alt="Journey of Faith"
-                className="rounded-lg shadow-xl w-full h-auto hover:shadow-2xl transition-shadow"
-              />
+            <div className="order-2 lg:order-1 transform transition-all duration-1000 translate-x-[-100px] opacity-0 section-animate-left">
+              <div className="relative rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all">
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/9gnLKsRsbQU"
+                  title="Our Journey of Faith"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-lg"
+                ></iframe>
+              </div>
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 transform transition-all duration-1000 translate-x-[100px] opacity-0 section-animate-right">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                 Our Journey of Faith
               </h2>
@@ -114,7 +141,7 @@ const OurStory = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="transform transition-all duration-1000 translate-x-[-100px] opacity-0 section-animate-left">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                 Growing in Faith
               </h2>
@@ -127,16 +154,18 @@ const OurStory = () => {
                 step forward in knowing Christ more and understanding His purpose for our lives.
               </p>
             </div>
-            <div className="fade-in-right">
-              <div className="relative bg-gray-900 rounded-lg overflow-hidden shadow-xl group cursor-pointer hover:shadow-2xl transition-all">
-                <div className="aspect-video bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Play className="w-16 h-16 mx-auto mb-4 opacity-80 group-hover:opacity-100 transition-opacity" />
-                    <h3 className="text-xl font-bold mb-2">Growing in Faith</h3>
-                    <p className="text-sm opacity-80">Video: Our Weekly Gatherings</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+            <div className="transform transition-all duration-1000 translate-x-[100px] opacity-0 section-animate-right">
+              <div className="relative rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all">
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/Gnp3VDFfazg"
+                  title="Growing in Faith"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-lg"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -150,19 +179,14 @@ const OurStory = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 fade-in-left">
-              <div className="relative bg-gray-900 rounded-lg overflow-hidden shadow-xl group cursor-pointer hover:shadow-2xl transition-all">
-                <div className="aspect-video bg-gradient-to-br from-accent to-primary flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Play className="w-16 h-16 mx-auto mb-4 opacity-80 group-hover:opacity-100 transition-opacity" />
-                    <h3 className="text-xl font-bold mb-2">Living with Purpose</h3>
-                    <p className="text-sm opacity-80">Video: Our Mission in Action</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              </div>
+            <div className="order-2 lg:order-1 transform transition-all duration-1000 translate-x-[-100px] opacity-0 section-animate-left hover:scale-105">
+              <img
+                src={livingWithPurposeImage}
+                alt="Living with Purpose"
+                className="rounded-lg shadow-xl w-full h-auto hover:shadow-2xl transition-shadow"
+              />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 transform transition-all duration-1000 translate-x-[100px] opacity-0 section-animate-right">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                 Living with Purpose
               </h2>
