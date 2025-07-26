@@ -34,7 +34,7 @@ const Home = () => {
                 {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
                 அவன் என்னிடத்தில் வாஞ்சையாயிருக்கிறபடியால் அவனை விடுவிப்பேன்; என் நாமத்தை அவன் அறிந்திருக்கிறபடியால் அவனை உயர்ந்த அடைக்கலத்திலே வைப்பேன்.
               </blockquote>
-              <cite className="gradient-text-accent font-bold text-lg">— சங்கீதம்:91:14</cite>
+              <cite className="gradient-text-accent font-bold text-lg">— சங்கீதம் : 91 : 14</cite>
             </div>
 
             <Link to="/pray-for-me">

@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer id="footer" className="bg-primary text-primary-foreground py-12 mt-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> */}
+        <div className="flex flex-col md:flex-row md:justify-evenly gap-8">
           {/* Contact Information */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
