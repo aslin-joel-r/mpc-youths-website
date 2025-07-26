@@ -127,9 +127,10 @@ All colors MUST be HSL.
 /*     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2); */
-     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+ background: rgba(0, 31, 63, 0.3); /* tinted dark blue glass */
+border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border */
+backdrop-filter: blur(10px);
+
   }
 
   /* Text gradients */
