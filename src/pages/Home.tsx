@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Heart, ArrowRight, Users, Hand, Target } from 'lucide-react';
 import TodaysVerse from '@/components/TodaysVerse';
-import heroImage from '@/assets/hero-image.jpg';
+import heroImage from '@/assets/hero-image_ai.jpg';
 import { FaPrayingHands } from "react-icons/fa";
 
 const Home = () => {
