@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Heart, ArrowRight, Users, Hand, Target } from 'lucide-react';
 import TodaysVerse from '@/components/TodaysVerse';
 import heroImage from '@/assets/hero-image.jpg';
+import { FaPrayingHands } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -75,7 +76,8 @@ const Home = () => {
 
             <div className="text-center p-6 rounded-lg bg-card shadow-md card-hover hover:shadow-xl transition-all hover:border-red-500">
               <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Hand className="w-8 h-8 text-white" />
+                {/* <Hand className="w-8 h-8 text-white" /> */}
+                <FaPrayingHands className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-2">Prayer</h3>
               <p className="text-muted-foreground">

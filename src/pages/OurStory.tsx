@@ -197,7 +197,7 @@ const OurStory = () => {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 We're not just growing—we're going! We're called to spread God's love and light 
-                in our institutions, homes, and communities.
+                throughout the world
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Through service, outreach, and bold faith, we aim to impact the world for Jesus. 
