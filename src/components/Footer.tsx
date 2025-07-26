@@ -21,6 +21,10 @@ const Footer = () => {
               <Mail className="w-5 h-5 text-secondary" />
               <p>aslinjoelr@gmail.com</p>
             </div>
+            {/* <div className="flex items-center space-x-3">
+              <Phone className="w-5 h-5 text-secondary" />
+              <p></p>
+            </div> */}
           </div>
 
           {/* Fellowship Info */}

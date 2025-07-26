@@ -30,9 +30,10 @@ const Home = () => {
             
             <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/30 shadow-lg">
               <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white">
-                "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name."
+                {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
+                அவன் என்னிடத்தில் வாஞ்சையாயிருக்கிறபடியால் அவனை விடுவிப்பேன்; என் நாமத்தை அவன் அறிந்திருக்கிறபடியால் அவனை உயர்ந்த அடைக்கலத்திலே வைப்பேன்.
               </blockquote>
-              <cite className="gradient-text-accent font-bold text-lg">— Psalm 91:14</cite>
+              <cite className="gradient-text-accent font-bold text-lg">— சங்கீதம்:91:14</cite>
             </div>
 
             <Link to="/pray-for-me">
