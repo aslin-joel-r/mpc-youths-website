@@ -24,7 +24,8 @@ const PrayForMe = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 1. Make the handleSubmit function async
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -37,34 +38,60 @@ const PrayForMe = () => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log('Prayer request submitted:', formData);
-    
-    toast({
-      title: "Prayer request submitted",
-      description: "Thank you for sharing. We will keep you in our prayers.",
-    });
+    // 2. Send the data to your Formspree endpoint
+    try {
+      const response = await fetch('https://formspree.io/f/xldlbovn', { // <-- REPLACE WITH YOUR URL
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      prayerRequest: ''
-    });
+      if (response.ok) {
+        // Show success message
+        toast({
+          title: "Prayer request submitted",
+          description: "Thank you for sharing. We will keep you in our prayers.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          prayerRequest: ''
+        });
+      } else {
+        // Handle server errors
+        throw new Error('Failed to submit the form.');
+      }
+    } catch (error) {
+      // Handle network errors
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Could not submit your prayer request. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   const inspirationalVerses = [
+
+    
+
     {
-      verse: "\"Cast all your anxiety on him because he cares for you.\"",
-      reference: "1 Peter 5:7"
+      verse: "அவன் என்னை நோக்கிக் கூப்பிடுவான், நான் அவனுக்கு மறுஉத்தரவு அருளிச்செய்வேன்; ஆபத்தில் நானே அவனோடிருந்து, அவனைத் தப்புவித்து, அவனைக் கனப்படுத்துவேன்.",
+      reference: "சங்கீதம் 91:15"
     },
     {
-      verse: "\"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.\"",
-      reference: "Philippians 4:6"
+      verse: "என் நாமத்தினாலே நீங்கள் எதைக்கேட்டாலும் அதை நான் செய்வேன்.",
+      reference: "யோவான் 14:14"
     },
     {
-      verse: "\"The Lord is near to all who call on him, to all who call on him in truth.\"",
-      reference: "Psalm 145:18"
+      verse: "கேளுங்கள், அப்பொழுது உங்களுக்குக் கொடுக்கப்படும்; தேடுங்கள், அப்பொழுது கண்டடைவீர்கள்; தட்டுங்கள் அப்பொழுது உங்களுக்குத் திறக்கப்படும்.",
+      reference: "மத்தேயு 7:7"
     }
   ];
 
@@ -88,7 +115,7 @@ const PrayForMe = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header with Verse - matching home page gradient style */}
+      {/* Header with Verse */}
       <section 
         className="py-16 pt-32 text-white relative z-10"
         style={{
@@ -100,14 +127,14 @@ const PrayForMe = () => {
           <div className="max-w-3xl mx-auto">
             <Quote className="w-8 h-8 mx-auto mb-4 text-white/80" />
             <blockquote className="text-xl md:text-2xl font-light italic mb-4 text-white/90">
-              "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours."
+                மேலும், நீங்கள் விசுவாசமுள்ளவர்களாய் ஜெபத்திலே எவைகளைக் கேட்பீர்களோ அவைகளையெல்லாம் பெறுவீர்கள் என்றார்.
             </blockquote>
-            <cite className="text-lg text-white/80">Mark 11:24</cite>
+            <cite className="text-lg text-white/80">மத்தேயு 21:22</cite>
           </div>
         </div>
       </section>
 
-      {/* Prayer Categories */}
+      {/* Prayer Categories
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary mb-8 text-center">
@@ -129,7 +156,7 @@ const PrayForMe = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Prayer Request Form */}
       <section className="py-16 bg-muted">
@@ -146,7 +173,7 @@ const PrayForMe = () => {
               <Card className="border-0 shadow-md">
                 <CardHeader className="pb-4">
                   <CardTitle className="text-2xl font-bold text-primary">
-                    Submit Your Prayer Request
+                    Send to MPC Prayer Team
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -184,8 +211,8 @@ const PrayForMe = () => {
                         className="resize-none"
                       />
                     </div>
-                    <Button type="submit" className="w-full">
-                      Submit Request
+                    <Button type="submit" className="w-full hover:bg-red-500 transition-colors">
+                      🕊️ Pray with Me
                     </Button>
                   </form>
                 </CardContent>
