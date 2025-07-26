@@ -67,10 +67,10 @@ const Events = () => {
   console.log('Events length:', events.length);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Header with Gradient - matching home page style */}
       <section 
-        className="py-16 pt-24 text-white relative"
+        className="py-16 pt-24 text-white relative z-10"
         style={{
           background: 'linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)))'
         }}
@@ -84,7 +84,7 @@ const Events = () => {
       </section>
 
       {/* Events Grid */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (

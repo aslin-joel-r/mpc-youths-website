@@ -6,10 +6,10 @@ import heroImage from '@/assets/hero-image.jpg';
 
 const Home = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="relative">
       {/* Unified Background for Header and Hero */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 h-screen"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 hero-gradient opacity-70"></div>
