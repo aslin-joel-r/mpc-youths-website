@@ -80,7 +80,7 @@ const OurStory = () => {
                 Who We Are
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                MPC Youth Fellowship is a vibrant group of young boys from Meippanin Pathai Church (MPC), 
+                MPC Youth Fellowship is a vibrant group of young boys from Meippanin Pathai Church (MPC). Our fellowship was
                 started in 2022. We're united by our love for Jesus and a desire to grow stronger in faith. 
                 Our community is built on friendship, worship, and purpose.
               </p>
