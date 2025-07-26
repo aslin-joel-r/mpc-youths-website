@@ -90,77 +90,32 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen } from 'lucide-react';
+import verses from '@/assets/verses.json';
 
-// The interface remains the same
 interface Verse {
   text: string;
   reference: string;
 }
 
-// The hardcoded 'verses' array is now removed from here.
-
 const TodaysVerse = () => {
   const [todaysVerse, setTodaysVerse] = useState<Verse | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // Add loading state
-  const [error, setError] = useState<string | null>(null); // Add error state
 
   useEffect(() => {
-    // Define an async function to fetch and process verses
-    const fetchVerses = async () => {
-      try {
-        // Fetch data from the path relative to the `public` directory
-        const response = await fetch('/src/assets/verses.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const verses: Verse[] = await response.json();
+    try {
+      // Get today's date and use it to select a verse
+      const today = new Date();
+      const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+      const verseIndex = dayOfYear % verses.length;
+      setTodaysVerse(verses[verseIndex]);
 
-        if (verses.length === 0) {
-            throw new Error('No verses found in the file.');
-        }
-
-        // Get today's date and use it to select a verse
-        const today = new Date();
-        const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
-        const verseIndex = dayOfYear % verses.length;
-        setTodaysVerse(verses[verseIndex]);
-
-      } catch (error) {
-        console.error("Failed to fetch verses:", error);
-        setError("Could not load today's verse. Please try again later.");
-      } finally {
-        setIsLoading(false);
-        // Trigger animation after data is processed
-        const timer = setTimeout(() => setIsVisible(true), 200);
-        return () => clearTimeout(timer);
-      }
-    };
-
-    fetchVerses();
-  }, []); // Empty dependency array ensures this runs only once on mount
-
-  // Display a loading message
-  if (isLoading) {
-    return (
-        <section className="py-12">
-            <div className="container mx-auto px-4 text-center">
-                <p>Loading verse...</p>
-            </div>
-        </section>
-    );
-  }
-
-  // Display an error message if fetching failed
-  if (error) {
-    return (
-        <section className="py-12">
-            <div className="container mx-auto px-4 text-center text-red-500">
-                <p>{error}</p>
-            </div>
-        </section>
-    );
-  }
+      // Trigger animation
+      const timer = setTimeout(() => setIsVisible(true), 200);
+      return () => clearTimeout(timer);
+    } catch (error) {
+      console.error("Failed to load verses:", error);
+    }
+  }, []);
 
   // If there's no verse for some reason, render nothing
   if (!todaysVerse) return null;
