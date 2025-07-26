@@ -84,54 +84,65 @@ const Events = () => {
       </section>
 
       {/* Events Grid */}
-      <section className="py-16 bg-background relative z-10">
+      <section className="py-16 bg-gray-50 min-h-[400px]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((event, index) => (
-              <Card 
-                key={event.id} 
-                className={`card-hover ${getCardColor(event.type)} border-l-4 section-fade-in bg-white shadow-lg`}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-2">
-                      <div className="text-primary">{event.icon}</div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getTypeColor(event.type)}`}>
-                        {event.type}
-                      </span>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Upcoming Events</h2>
+          {events.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No events available at the moment.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {events.map((event, index) => (
+                <Card 
+                  key={event.id} 
+                  className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0"
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="text-blue-600">{event.icon}</div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${
+                          event.type === 'Regular' ? 'bg-green-500' :
+                          event.type === 'Special' ? 'bg-red-500' :
+                          'bg-blue-500'
+                        }`}>
+                          {event.type}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <CardTitle className="text-xl text-gray-900 font-bold">{event.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-gray-700">{event.date}</span>
+                    <CardTitle className="text-xl text-gray-900 font-bold leading-tight">
+                      {event.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center space-x-3">
+                        <Calendar className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="font-medium text-gray-700">{event.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Clock className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="font-medium text-gray-700">{event.time}</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Users className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="font-medium text-gray-700">{event.location}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-gray-700">{event.time}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-gray-700">{event.location}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed mb-4 font-medium">
-                    {event.description}
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all"
-                  >
-                    More Info
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                      {event.description}
+                    </p>
+                    <Button 
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                    >
+                      Learn More
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
