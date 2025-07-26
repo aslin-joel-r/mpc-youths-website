@@ -9,7 +9,7 @@ const Home = () => {
     <div className="min-h-screen relative">
       {/* Unified Background for Header and Hero */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 hero-gradient opacity-70"></div>
