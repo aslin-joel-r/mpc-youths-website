@@ -55,7 +55,7 @@ const OurStory = () => {
     <div className="min-h-screen">
       {/* Header with Gradient - matching home page style */}
       <section 
-        className="py-16 pt-24 text-white relative"
+        className="py-16 pt-32 text-white relative z-10"
         style={{
           background: 'linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)))'
         }}
