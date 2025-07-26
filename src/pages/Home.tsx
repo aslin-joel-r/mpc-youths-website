@@ -6,15 +6,17 @@ import heroImage from '@/assets/hero-image.jpg';
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Unified Background for Header and Hero */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 hero-gradient opacity-70"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 hero-gradient opacity-70"></div>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 z-10">
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="section-fade-in animate">
@@ -52,10 +54,12 @@ const Home = () => {
       </section>
 
       {/* Today's Verse Section */}
-      <TodaysVerse />
+      <div className="relative z-10 bg-background">
+        <TodaysVerse />
+      </div>
 
       {/* Quick Info Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6 rounded-lg bg-card shadow-md card-hover hover:shadow-xl transition-all hover:border-red-500">
