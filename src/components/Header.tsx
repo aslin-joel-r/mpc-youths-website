@@ -31,12 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`shadow-lg sticky top-0 z-50 ${isHomePage ? 'absolute w-full' : 'glassmorphism'}`} style={isHomePage ? {
-      backgroundImage: `url(${heroImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      position: 'relative'
-    } : {}}>
+    <header className={`shadow-lg sticky top-0 z-50 glassmorphism ${isHomePage ? 'absolute w-full' : ''}`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}

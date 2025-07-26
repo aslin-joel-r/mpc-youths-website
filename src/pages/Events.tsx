@@ -65,7 +65,7 @@ const Events = () => {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-16 pt-24 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Events</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">

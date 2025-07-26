@@ -91,7 +91,7 @@ const PrayForMe = () => {
   return (
     <div className="min-h-screen">
       {/* Header with Verse */}
-      <section className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-16 pt-24 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Prayer Request</h1>
           <div className="max-w-3xl mx-auto">
