@@ -53,9 +53,14 @@ const OurStory = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="py-16 pt-24 bg-gradient-to-r from-primary to-secondary text-white">
-        <div className="container mx-auto px-4 text-center">
+      {/* Header with Gradient - matching home page style */}
+      <section 
+        className="py-16 pt-24 text-white relative"
+        style={{
+          background: 'linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)))'
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Story</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
             The journey of faith, friendship, and purpose that defines MPC Youth Fellowship

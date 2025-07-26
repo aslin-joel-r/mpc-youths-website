@@ -1,3 +1,4 @@
+
 import { Calendar, Clock, Users, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -62,11 +63,19 @@ const Events = () => {
     }
   };
 
+  console.log('Events array:', events);
+  console.log('Events length:', events.length);
+
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="py-16 pt-24 bg-gradient-to-r from-primary to-secondary text-white">
-        <div className="container mx-auto px-4 text-center">
+      {/* Header with Gradient - matching home page style */}
+      <section 
+        className="py-16 pt-24 text-white relative"
+        style={{
+          background: 'linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)))'
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Events</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Join us in fellowship, worship, and community service as we grow together in faith
@@ -75,13 +84,13 @@ const Events = () => {
       </section>
 
       {/* Events Grid */}
-      <section className="py-16">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (
               <Card 
                 key={event.id} 
-                className={`card-hover ${getCardColor(event.type)} border-l-4 section-fade-in`}
+                className={`card-hover ${getCardColor(event.type)} border-l-4 section-fade-in bg-card`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
@@ -110,7 +119,7 @@ const Events = () => {
                       <span className="font-bold text-primary">{event.location}</span>
                     </div>
                   </div>
-                  <p className="text-primary/80 leading-relaxed mb-4 font-semibold">
+                  <p className="text-foreground/80 leading-relaxed mb-4 font-medium">
                     {event.description}
                   </p>
                   <Button 
