@@ -67,14 +67,16 @@ const Events = () => {
   console.log('Events length:', events.length);
 
   return (
-    <div className="min-h-screen">
-      {/* Header with Gradient - matching home page style */}
-      <section 
-        className="py-16 pt-24 text-white relative"
-        style={{
-          background: 'linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)))'
-        }}
+    <div className="min-h-screen relative">
+      {/* Unified Background for Header and Hero - matching Home page */}
+      <div 
+        className="absolute inset-x-0 top-0 h-80 bg-gradient-to-br from-primary via-secondary to-accent z-0"
       >
+        <div className="absolute inset-0 hero-gradient opacity-70"></div>
+      </div>
+
+      {/* Header with Gradient - matching home page style */}
+      <section className="relative py-16 pt-24 text-white z-10">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Events</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
@@ -84,7 +86,7 @@ const Events = () => {
       </section>
 
       {/* Events Grid */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (
@@ -136,7 +138,7 @@ const Events = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-secondary/10 to-accent/10">
+      <section className="py-16 bg-gradient-to-r from-secondary/10 to-accent/10 relative z-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">
             Want to Join Our Fellowship?
