@@ -301,7 +301,7 @@ backdrop-filter: blur(10px);
   }
 
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite alternate;
+    animation: pulse-glow 4s ease-in-out infinite alternate;
   }
 
   @keyframes pulse-glow {
@@ -429,10 +429,38 @@ backdrop-filter: blur(10px);
 
   @keyframes textGlow {
     from {
-      text-shadow: 0 0 20px hsl(var(--mpc-light-blue) / 0.3);
+      text-shadow: 
+        0 0 20px hsl(var(--mpc-light-blue) / 0.5),
+        0 0 40px hsl(var(--mpc-crimson) / 0.3),
+        0 0 60px hsl(var(--modern-teal) / 0.2);
     }
     to {
-      text-shadow: 0 0 30px hsl(var(--mpc-light-blue) / 0.8);
+      text-shadow: 
+        0 0 30px hsl(var(--mpc-light-blue) / 0.8),
+        0 0 60px hsl(var(--mpc-crimson) / 0.6),
+        0 0 80px hsl(var(--modern-teal) / 0.4);
+    }
+  }
+
+  @keyframes heroFloat {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px hsl(var(--mpc-light-blue) / 0.2),
+        0 0 40px hsl(var(--mpc-crimson) / 0.1);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px hsl(var(--mpc-light-blue) / 0.4),
+        0 0 60px hsl(var(--mpc-crimson) / 0.3);
     }
   }
 
@@ -453,7 +481,15 @@ backdrop-filter: blur(10px);
   }
 
   .animate-text-glow {
-    animation: textGlow 2s ease-in-out infinite alternate;
+    animation: textGlow 3s ease-in-out infinite alternate;
+  }
+
+  .animate-hero-float {
+    animation: heroFloat 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
   }
 
   .stagger-1 { animation-delay: 0.1s; }

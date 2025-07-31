@@ -25,15 +25,15 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="section-fade-in animate">
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg animate-slide-up animate-hero-float">
               <span className="gradient-text-primary animate-text-glow">Welcome to</span>
-              <span className="block gradient-text-accent font-extrabold animate-slide-up stagger-1">MPC Youth Fellowship</span>
+              <span className="block gradient-text-accent font-extrabold animate-text-glow animate-pulse-glow stagger-1">MPC Youth Fellowship</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md animate-slide-up stagger-2">
               Where Love for God Leads to a Life of Purpose
             </p>
             
-            <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden animate-scale-in stagger-3">
+            <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden animate-scale-in animate-hero-float stagger-3">
               <div className="shimmer-effect absolute inset-0 rounded-2xl"></div>
               <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white relative z-10 animate-slide-left">
                 {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
