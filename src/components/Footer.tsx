@@ -54,13 +54,13 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
             </div> */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 hover:text-red-500">
               <a
                 href="https://www.youtube.com/@MPC_Youths"
-                className="flex items-center space-x-2 text-primary-foreground hover:text-secondary transition-colors"
+                className="flex items-center hover:text-red-500 space-x-2 text-primary-foreground  transition-colors"
               >
-                <Youtube className="w-6 h-6" />
-                <span>YouTube</span>
+                <Youtube className="w-6 h-6 " />
+                <span className=''>YouTube</span>
               </a>
             </div>
           </div>
