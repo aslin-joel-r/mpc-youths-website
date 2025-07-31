@@ -27,7 +27,7 @@ const Home = () => {
           <div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg">
               <span className="gradient-text-primary entrance-slide-left">Welcome to</span>
-              <span className="block gradient-text-accent font-extrabold  entrance-slide-right stagger-1">MPC Youth Fellowship</span>
+              <span className="block gradient-text-accent font-extrabold  entrance-slide-right stagger-1 ">MPC Youth Fellowship</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md entrance-slide-left stagger-2">
               Where Love for God Leads to a Life of Purpose
@@ -68,7 +68,7 @@ const Home = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
                 <Users className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Fellowship</h3>
+              <h3 className="text-2xl font-bold  mb-3 gradient-text-accent">Fellowship</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Join us every 2nd and 4th Sunday for worship and fellowship
               </p>
@@ -79,7 +79,7 @@ const Home = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
                 <FaPrayingHands className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Prayer</h3>
+              <h3 className="text-2xl font-bold  mb-3 gradient-text-accent">Prayer</h3>
               <p className="text-muted-foreground leading-relaxed">
                 We believe in the power of prayer and community support
               </p>
@@ -90,7 +90,7 @@ const Home = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
                 <Target className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Purpose</h3>
+              <h3 className="text-2xl font-bold  mb-3 gradient-text-accent">Purpose</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Living with purpose and spreading God's love in our community
               </p>

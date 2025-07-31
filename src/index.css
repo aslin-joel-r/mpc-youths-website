@@ -486,6 +486,7 @@ backdrop-filter: blur(10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+
   .hover-lift:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px hsl(var(--mpc-dark-blue) / 0.15);
