@@ -27,7 +27,6 @@ All colors MUST be HSL.
     /* Modern accent colors */
     --modern-teal: 180 100% 35%;
     --modern-violet: 270 75% 55%;
-    --warm-orange: 25 95% 53%;
 
     /* Hover color for interactive elements */
     --hover-red: 344 71% 46%;
@@ -190,7 +189,7 @@ All colors MUST be HSL.
     right: 15%;
     width: 150px;
     height: 150px;
-    background: linear-gradient(45deg, hsl(var(--mpc-crimson)), hsl(var(--warm-orange)));
+    background: linear-gradient(45deg, hsl(var(--mpc-crimson)), hsl(var(--mpc-red)));
     animation-delay: 2s;
   }
 
@@ -229,7 +228,7 @@ backdrop-filter: blur(10px);
   .gradient-text-accent {
     background: linear-gradient(135deg, 
       hsl(var(--mpc-white)) 0%, 
-      hsl(var(--warm-orange)) 40%, 
+      hsl(var(--mpc-light-blue)) 40%, 
       hsl(var(--mpc-red)) 80%, 
       hsl(var(--mpc-crimson)) 100%);
     -webkit-background-clip: text;
@@ -287,7 +286,7 @@ backdrop-filter: blur(10px);
   .modern-button {
     background: linear-gradient(135deg, 
       hsl(var(--mpc-crimson)) 0%, 
-      hsl(var(--warm-orange)) 100%);
+      hsl(var(--mpc-red)) 100%);
     box-shadow: 
       0 4px 15px hsl(var(--mpc-crimson) / 0.4),
       inset 0 1px 0 hsl(var(--mpc-white) / 0.2);
@@ -381,5 +380,92 @@ backdrop-filter: blur(10px);
     to {
       filter: drop-shadow(0 0 20px hsl(var(--modern-teal) / 1));
     }
+  }
+
+  /* Enhanced animations for better page effects */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes textGlow {
+    from {
+      text-shadow: 0 0 20px hsl(var(--mpc-light-blue) / 0.3);
+    }
+    to {
+      text-shadow: 0 0 30px hsl(var(--mpc-light-blue) / 0.8);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideInUp 0.8s ease-out;
+  }
+
+  .animate-slide-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  .animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px hsl(var(--mpc-dark-blue) / 0.15);
   }
 }

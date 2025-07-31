@@ -25,21 +25,21 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="section-fade-in animate">
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg">
-              <span className="gradient-text-primary">Welcome to</span>
-              <span className="block gradient-text-accent font-extrabold">MPC Youth Fellowship</span>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg animate-slide-up">
+              <span className="gradient-text-primary animate-text-glow">Welcome to</span>
+              <span className="block gradient-text-accent font-extrabold animate-slide-up stagger-1">MPC Youth Fellowship</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md animate-slide-up stagger-2">
               Where Love for God Leads to a Life of Purpose
             </p>
             
-            <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden">
+            <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden animate-scale-in stagger-3">
               <div className="shimmer-effect absolute inset-0 rounded-2xl"></div>
-              <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white relative z-10">
+              <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white relative z-10 animate-slide-left">
                 {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
                 அவன் என்னிடத்தில் வாஞ்சையாயிருக்கிறபடியால் அவனை விடுவிப்பேன்; என் நாமத்தை அவன் அறிந்திருக்கிறபடியால் அவனை உயர்ந்த அடைக்கலத்திலே வைப்பேன்.
               </blockquote>
-              <cite className="gradient-text-accent font-bold text-lg relative z-10">— சங்கீதம் : 91 : 14</cite>
+              <cite className="gradient-text-accent font-bold text-lg relative z-10 animate-slide-right">— சங்கீதம் : 91 : 14</cite>
             </div>
 
             <Link to="/pray-for-me">
@@ -52,12 +52,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
       </section>
 
       {/* Today's Verse Section */}
@@ -69,35 +63,35 @@ const Home = () => {
       <section className="py-20 bg-background relative z-10 overflow-hidden">
         <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg hover-lift relative overflow-hidden group animate-slide-up stagger-1">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10 animate-scale-in">
                 <Users className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Fellowship</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3 animate-slide-left">Fellowship</h3>
+              <p className="text-muted-foreground leading-relaxed animate-slide-right">
                 Join us every 2nd and 4th Sunday for worship and fellowship
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg hover-lift relative overflow-hidden group animate-slide-up stagger-2">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10 animate-scale-in stagger-1">
                 <FaPrayingHands className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Prayer</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3 animate-slide-left stagger-1">Prayer</h3>
+              <p className="text-muted-foreground leading-relaxed animate-slide-right stagger-1">
                 We believe in the power of prayer and community support
               </p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg hover-lift relative overflow-hidden group animate-slide-up stagger-3">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10 animate-scale-in stagger-2">
                 <Target className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Purpose</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3 animate-slide-left stagger-2">Purpose</h3>
+              <p className="text-muted-foreground leading-relaxed animate-slide-right stagger-2">
                 Living with purpose and spreading God's love in our community
               </p>
             </div>
