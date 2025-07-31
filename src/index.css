@@ -8,11 +8,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* MPC Youth Fellowship Color Palette */
+    /* MPC Youth Fellowship Enhanced Color Palette */
     --mpc-white: 0 0% 100%;
     --mpc-dark-blue: 219 100% 12%;
     --mpc-light-blue: 210 100% 51%;
     --mpc-red: 344 71% 46%;
+    
+    /* Enhanced color variations */
+    --mpc-navy: 220 100% 8%;
+    --mpc-royal-blue: 220 90% 35%;
+    --mpc-sky-blue: 200 100% 70%;
+    --mpc-crimson: 348 83% 47%;
+    --mpc-coral: 14 90% 60%;
+    --mpc-purple: 280 60% 45%;
+    --mpc-gradient-start: 220 100% 15%;
+    --mpc-gradient-end: 280 60% 35%;
+
+    /* Modern accent colors */
+    --modern-teal: 180 100% 35%;
+    --modern-violet: 270 75% 55%;
+    --warm-orange: 25 95% 53%;
 
     /* Hover color for interactive elements */
     --hover-red: 344 71% 46%;
@@ -113,13 +128,79 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans;
   }
 
-  /* Custom gradients and animations */
+  /* Enhanced Modern Gradients */
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--mpc-dark-blue)), hsl(var(--mpc-light-blue)));
+    background: linear-gradient(135deg, 
+      hsl(var(--mpc-navy)) 0%, 
+      hsl(var(--mpc-dark-blue)) 25%, 
+      hsl(var(--mpc-royal-blue)) 50%, 
+      hsl(var(--mpc-purple)) 75%, 
+      hsl(var(--modern-violet)) 100%);
+    position: relative;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      hsl(var(--mpc-crimson) / 0.1) 0%, 
+      transparent 40%, 
+      hsl(var(--modern-teal) / 0.15) 60%, 
+      hsl(var(--mpc-sky-blue) / 0.1) 100%);
+    pointer-events: none;
   }
 
   .verse-gradient {
-    background: linear-gradient(45deg, hsl(var(--mpc-light-blue) / 0.1), hsl(var(--mpc-red) / 0.1));
+    background: linear-gradient(120deg, 
+      hsl(var(--mpc-light-blue) / 0.08), 
+      hsl(var(--modern-teal) / 0.12), 
+      hsl(var(--mpc-red) / 0.1));
+  }
+
+  .modern-card-gradient {
+    background: linear-gradient(145deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--mpc-sky-blue) / 0.03) 50%, 
+      hsl(var(--modern-violet) / 0.05) 100%);
+  }
+
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-orb-1 {
+    top: 20%;
+    left: 10%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, hsl(var(--modern-teal)), hsl(var(--mpc-sky-blue)));
+    animation-delay: 0s;
+  }
+
+  .floating-orb-2 {
+    top: 60%;
+    right: 15%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, hsl(var(--mpc-crimson)), hsl(var(--warm-orange)));
+    animation-delay: 2s;
+  }
+
+  .floating-orb-3 {
+    bottom: 30%;
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, hsl(var(--modern-violet)), hsl(var(--mpc-purple)));
+    animation-delay: 4s;
   }
 
   /* Glassmorphism effect for header */
@@ -133,16 +214,35 @@ backdrop-filter: blur(10px);
 
   }
 
-  /* Text gradients */
+  /* Enhanced Text gradients */
   .gradient-text-primary {
-    background: linear-gradient(135deg, hsl(var(--mpc-white)), hsl(var(--mpc-light-blue)));
+    background: linear-gradient(135deg, 
+      hsl(var(--mpc-white)) 0%, 
+      hsl(var(--mpc-sky-blue)) 50%, 
+      hsl(var(--modern-teal)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 2px 4px hsl(var(--mpc-dark-blue) / 0.3));
   }
 
   .gradient-text-accent {
-    background: linear-gradient(135deg, hsl(var(--mpc-white)), hsl(var(--mpc-red)));
+    background: linear-gradient(135deg, 
+      hsl(var(--mpc-white)) 0%, 
+      hsl(var(--warm-orange)) 40%, 
+      hsl(var(--mpc-red)) 80%, 
+      hsl(var(--mpc-crimson)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px hsl(var(--mpc-dark-blue) / 0.3));
+  }
+
+  .gradient-text-modern {
+    background: linear-gradient(135deg, 
+      hsl(var(--modern-violet)) 0%, 
+      hsl(var(--mpc-purple)) 50%, 
+      hsl(var(--modern-teal)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -173,7 +273,32 @@ backdrop-filter: blur(10px);
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-3;
+    transform-style: preserve-3d;
+  }
+
+  .card-hover:hover {
+    box-shadow: 
+      0 20px 40px hsl(var(--mpc-dark-blue) / 0.1),
+      0 0 0 1px hsl(var(--modern-teal) / 0.2),
+      inset 0 1px 0 hsl(var(--mpc-white) / 0.2);
+  }
+
+  .modern-button {
+    background: linear-gradient(135deg, 
+      hsl(var(--mpc-crimson)) 0%, 
+      hsl(var(--warm-orange)) 100%);
+    box-shadow: 
+      0 4px 15px hsl(var(--mpc-crimson) / 0.4),
+      inset 0 1px 0 hsl(var(--mpc-white) / 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modern-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 25px hsl(var(--mpc-crimson) / 0.6),
+      inset 0 1px 0 hsl(var(--mpc-white) / 0.2);
   }
 
   .pulse-glow {
@@ -200,5 +325,61 @@ backdrop-filter: blur(10px);
 
   .red-glow {
     animation: red-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--mpc-white) / 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .glass-morphism {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--mpc-white) / 0.1),
+      hsl(var(--mpc-white) / 0.05)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--mpc-white) / 0.2);
+    box-shadow: 
+      0 8px 32px hsl(var(--mpc-dark-blue) / 0.1),
+      inset 0 1px 0 hsl(var(--mpc-white) / 0.2);
+  }
+
+  .neon-glow {
+    filter: drop-shadow(0 0 10px hsl(var(--modern-teal) / 0.8));
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon-pulse {
+    from {
+      filter: drop-shadow(0 0 10px hsl(var(--modern-teal) / 0.5));
+    }
+    to {
+      filter: drop-shadow(0 0 20px hsl(var(--modern-teal) / 1));
+    }
   }
 }

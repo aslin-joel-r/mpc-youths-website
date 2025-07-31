@@ -18,6 +18,10 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 z-10">
+        {/* Floating Orbs */}
+        <div className="floating-orb floating-orb-1"></div>
+        <div className="floating-orb floating-orb-2"></div>
+        <div className="floating-orb floating-orb-3"></div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="section-fade-in animate">
@@ -29,16 +33,17 @@ const Home = () => {
               Where Love for God Leads to a Life of Purpose
             </p>
             
-            <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/30 shadow-lg">
-              <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white">
+            <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden">
+              <div className="shimmer-effect absolute inset-0 rounded-2xl"></div>
+              <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white relative z-10">
                 {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
                 அவன் என்னிடத்தில் வாஞ்சையாயிருக்கிறபடியால் அவனை விடுவிப்பேன்; என் நாமத்தை அவன் அறிந்திருக்கிறபடியால் அவனை உயர்ந்த அடைக்கலத்திலே வைப்பேன்.
               </blockquote>
-              <cite className="gradient-text-accent font-bold text-lg">— சங்கீதம் : 91 : 14</cite>
+              <cite className="gradient-text-accent font-bold text-lg relative z-10">— சங்கீதம் : 91 : 14</cite>
             </div>
 
             <Link to="/pray-for-me">
-              <Button size="lg" className="text-lg px-8 py-4 card-hover group bg-red-600 hover:bg-red-700 text-white red-glow border-0">
+              <Button size="lg" className="text-lg px-10 py-5 modern-button group border-0 text-white font-bold rounded-2xl neon-glow">
                 <Heart className="w-5 h-5 mr-2" />
                 Pray for Me
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -61,36 +66,38 @@ const Home = () => {
       </div>
 
       {/* Quick Info Section */}
-      <section className="py-16 bg-background relative z-10">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-background relative z-10 overflow-hidden">
+        <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-lg bg-card shadow-md card-hover hover:shadow-xl transition-all hover:border-red-500">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+                <Users className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-2">Fellowship</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Fellowship</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Join us every 2nd and 4th Sunday for worship and fellowship
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-lg bg-card shadow-md card-hover hover:shadow-xl transition-all hover:border-red-500">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                {/* <Hand className="w-8 h-8 text-white" /> */}
-                <FaPrayingHands className="w-8 h-8 text-white" />
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+                <FaPrayingHands className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-2">Prayer</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Prayer</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 We believe in the power of prayer and community support
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-lg bg-card shadow-md card-hover hover:shadow-xl transition-all hover:border-red-500">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-white" />
+            <div className="text-center p-8 rounded-2xl modern-card-gradient shadow-lg card-hover relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
+                <Target className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-2">Purpose</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl font-bold gradient-text-modern mb-3">Purpose</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Living with purpose and spreading God's love in our community
               </p>
             </div>
