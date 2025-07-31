@@ -9,16 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "modern-button text-white hover:shadow-lg neon-glow",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 modern-button neon-glow",
         outline:
-          "border border-input bg-background hover:bg-red-500 hover:text-white hover:border-red-500",
+          "border border-input bg-background hover:bg-red-500 hover:text-white hover:border-red-500 modern-button neon-glow",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-red-500/10 hover:text-red-500",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 modern-button neon-glow",
+        ghost: "hover:bg-red-500/10 hover:text-red-500 transition-all duration-300",
         link: "text-primary underline-offset-4 hover:underline",
-        glow: "bg-secondary text-white hover:bg-secondary/80 pulse-glow shadow-lg",
+        glow: "modern-button text-white neon-glow pulse-glow shadow-lg",
       },
       size: {
         default: "h-10 px-4 py-2",

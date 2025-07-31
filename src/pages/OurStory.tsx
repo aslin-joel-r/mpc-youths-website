@@ -19,7 +19,7 @@ const OurStory = () => {
             if (entry.isIntersecting) {
               entry.target.classList.add('animate');
               
-              // Enhanced scroll animations
+              // Enhanced scroll animations for both directions
               const leftElements = entry.target.querySelectorAll('.section-animate-left');
               const rightElements = entry.target.querySelectorAll('.section-animate-right');
               
@@ -35,6 +35,22 @@ const OurStory = () => {
                   el.classList.remove('translate-x-[100px]', 'opacity-0');
                   el.classList.add('translate-x-0', 'opacity-100');
                 }, idx * 200);
+              });
+            } else {
+              // Reset animations when leaving viewport (for scroll up)
+              entry.target.classList.remove('animate');
+              
+              const leftElements = entry.target.querySelectorAll('.section-animate-left');
+              const rightElements = entry.target.querySelectorAll('.section-animate-right');
+              
+              leftElements.forEach((el) => {
+                el.classList.remove('translate-x-0', 'opacity-100');
+                el.classList.add('translate-x-[-100px]', 'opacity-0');
+              });
+              
+              rightElements.forEach((el) => {
+                el.classList.remove('translate-x-0', 'opacity-100');
+                el.classList.add('translate-x-[100px]', 'opacity-0');
               });
             }
           });
