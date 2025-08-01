@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/mpc-youths-website/' // Replace with your GitHub repo name
+  base: '/' // Replace with your GitHub repo name
 }));
