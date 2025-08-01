@@ -27,14 +27,14 @@ const Home = () => {
           <div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg">
               <span className="gradient-text-primary entrance-slide-left">Welcome to</span>
-              <span className="block gradient-text-accent font-extrabold  entrance-slide-right stagger-1 ">MPC Youth Fellowship</span>
+              <span className="block gradient-text-accent font-extrabold  entrance-slide-right stagger-1 animated-gradient-text ">MPC Youth Fellowship</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md entrance-slide-left stagger-2">
               Where Love for God Leads to a Life of Purpose
             </p>
             
             <div className="glass-morphism rounded-2xl p-8 mb-8 relative overflow-hidden entrance-slide-right stagger-3">
-              <div className="shimmer-effect absolute inset-0 rounded-2xl"></div>
+              <div className=" absolute inset-0 rounded-2xl"></div>
               <blockquote className="text-lg md:text-xl italic mb-4 font-bold text-white relative z-10">
                 {/* "Because he loves me," says the Lord, "I will rescue him; I will protect him, for he acknowledges my name." */}
                 அவன் என்னிடத்தில் வாஞ்சையாயிருக்கிறபடியால் அவனை விடுவிப்பேன்; என் நாமத்தை அவன் அறிந்திருக்கிறபடியால் அவனை உயர்ந்த அடைக்கலத்திலே வைப்பேன்.

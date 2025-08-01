@@ -492,3 +492,43 @@ backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px hsl(var(--mpc-dark-blue) / 0.15);
   }
 }
+
+
+        /* The CSS class for the animated gradient text effect.
+          It creates a wide gradient, clips it to the text, and then
+          animates the background position to create a moving effect.
+        */
+        .animated-gradient-text {
+            /* 1. The vibrant gradient. The size is key. */
+            background: linear-gradient(
+              90deg, 
+              hsl(var(--mpc-light-blue)), 
+              hsl(var(--mpc-red)), 
+              hsl(var(--modern-teal)), 
+              hsl(var(--mpc-light-blue))
+            );
+            /* 2. Make the background much wider than the element. */
+            background-size: 200% auto;
+
+            /* 3. Clip the background to the text. */
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            /* 4. Animate the background position using the keyframes below. */
+            animation: moveGradient 3s linear infinite;
+
+            /* 5. Hide the actual text color to reveal the gradient. */
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Defines the animation keyframes.
+          It moves the background position from left to right.
+        */
+        @keyframes moveGradient {
+            from {
+                background-position: 0% center;
+            }
+            to {
+                background-position: -200% center;
+            }
+        }
