@@ -25,11 +25,13 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div>
-            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg verse-gradient rounded-2xl p-6">
-              <span className="gradient-text-primary entrance-slide-left">Welcome to</span>
+
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight drop-shadow-lg">
+              <span className="gradient-text-primary entrance-slide-left animated-gradient-text">Welcome to</span>
+
               <span className="block gradient-text-accent font-extrabold  entrance-slide-right stagger-1 animated-gradient-text ">MPC Youth Fellowship</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md entrance-slide-left stagger-2">
+            <p className="text-xl md:text-2xl mb-8 text-white font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-md entrance-slide-left stagger-2 ">
               Where Love for God Leads to a Life of Purpose
             </p>
             
